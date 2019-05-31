@@ -1,0 +1,60 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="!(isHandset$ | async)"
+      malihu-scrollbar [scrollbarOptions]="scrollbarOptions">
+    <div class="logo">
+      <img src="assets/images/logo.png" alt="logo"/>
+    </div>
+    <mat-nav-list class="nav-list">
+      <ng-material-multilevel-menu  
+        [configuration]='config' 
+        [items]='menuItems'
+        (selectedItem)="selectedItem($event)" 
+        (selectedLabel)="selectedLabel($event)">
+      </ng-material-multilevel-menu>
+    </mat-nav-list>
+    <footer class="footer mt-auto py-3">
+      <div class="container">
+        <span style="color: #dddddd; font-size: 8pt; font-weight: 500">Link V-1.0.0</span>
+      </div>
+    </footer>
+  </mat-sidenav>
+  <mat-sidenav-content malihu-scrollbar [scrollbarOptions]="scrollbarOptions">
+    <mat-toolbar class="toolbar">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>{{header}}</span>
+      <span class="example-fill-remaining-space"></span>
+      <span class="example-fill-remaining-space"></span>
+      <button
+        type="button"
+        aria-label="User menu"
+        mat-icon-button
+        [matMenuTriggerFor]="personMenu"
+        matTooltip="User menu">
+        <img src="assets/images/default-user.png" class="user-img" alt="user image"/>
+      </button>
+      <mat-menu #personMenu="matMenu">
+        <button mat-menu-item>
+          <img src="assets/images/default-user.png" class="user-img" alt="user image" style="width: 40px"/> 
+          <span class="name">Robby Rahmana</span><br/>
+        </button>
+        <mat-divider class="divider-img"></mat-divider>
+        <button mat-menu-item><mat-icon aria-label="User menu icon">contact_support</mat-icon> Contact Us</button>
+        <button mat-menu-item><mat-icon aria-label="User menu icon">exit_to_app</mat-icon> Logout</button>
+      </mat-menu>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <div class="content-padding">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

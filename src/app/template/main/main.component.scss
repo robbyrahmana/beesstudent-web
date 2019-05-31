@@ -1,0 +1,71 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 260px;
+  background-image: url('../../../assets/images/bg-sidebar.jpg');
+  background-size: cover;
+  background-position: center center;
+
+  .logo {
+    text-align: center;
+  
+    img{
+      width: 250px;
+      top: 16px;
+    }
+  }
+  .nav-list {
+    overflow: hidden;
+    height: 100%;
+    margin-bottom: 50px;
+  }
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.toolbar {
+  background: white;
+  box-shadow: 0px 2px 1px -1px rgba(82, 82, 82, 0.2), 0px 1px 1px 0px rgba(82, 82, 82, 0.14), 0px 1px 3px 0px rgba(82, 82, 82, 0.12);
+
+  .example-fill-remaining-space {
+    /* This fills the remaining space, by using flexbox. 
+       Every toolbar row uses a flexbox row layout. */
+    flex: 1 1 auto;
+  }
+}
+
+.user-img {
+  max-width:100%;
+  height:auto;
+  border-radius: 50px;
+}
+
+.divider-img {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.name {
+  padding-left: 10px;
+  font-weight: bold;
+}
+
+.content-padding {
+  padding: 16px;
+}
+
+@media (max-width: 600px) {
+  .content-padding {
+    padding: 0px;
+  }
+}

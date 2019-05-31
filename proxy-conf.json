@@ -1,0 +1,6 @@
+{
+    "/api": {
+        "target": "http://beesstudent.com:8300",
+        "secure": false
+    }
+}
