@@ -1,0 +1,28 @@
+<div class="button-action-group">
+  <button mat-flat-button color="primary" (click)="(click)">
+    New Product Category
+  </button>
+  <button
+    mat-stroked-button
+    color="primary"
+    (click)="(click)"
+    *ngIf="dialogData"
+  >
+    Update
+  </button>
+  <button mat-stroked-button color="warn" (click)="(click)" *ngIf="dialogData">
+    Delete
+  </button>
+  <button
+    mat-stroked-button
+    color="primary"
+    [matMenuTriggerFor]="more"
+    *ngIf="dialogData"
+  >
+    More
+  </button>
+  <mat-menu #more="matMenu">
+    <button mat-menu-item>View Products</button>
+    <button mat-menu-item>Active/Deactive</button>
+  </mat-menu>
+</div>

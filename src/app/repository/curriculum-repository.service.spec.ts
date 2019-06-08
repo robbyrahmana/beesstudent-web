@@ -1,12 +1,14 @@
-import { TestBed } from '@angular/core/testing';
+import { TestBed } from "@angular/core/testing";
 
-import { CurriculumRepositoryService } from './curriculum-repository.service';
+import { CurriculumRepositoryService } from "./curriculum-repository.service";
 
-describe('CurriculumRepositoryService', () => {
+describe("CurriculumRepositoryService", () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
-  it('should be created', () => {
-    const service: CurriculumRepositoryService = TestBed.get(CurriculumRepositoryService);
+  it("should be created", () => {
+    const service: CurriculumRepositoryService = TestBed.get(
+      CurriculumRepositoryService
+    );
     expect(service).toBeTruthy();
   });
 });

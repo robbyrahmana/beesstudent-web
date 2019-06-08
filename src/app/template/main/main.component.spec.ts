@@ -1,17 +1,17 @@
-import { LayoutModule } from '@angular/cdk/layout';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { LayoutModule } from "@angular/cdk/layout";
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
+import { NoopAnimationsModule } from "@angular/platform-browser/animations";
 import {
   MatButtonModule,
   MatIconModule,
   MatListModule,
   MatSidenavModule,
-  MatToolbarModule,
-} from '@angular/material';
+  MatToolbarModule
+} from "@angular/material";
 
-import { MainComponent } from './main.component';
+import { MainComponent } from "./main.component";
 
-describe('MainComponent', () => {
+describe("MainComponent", () => {
   let component: MainComponent;
   let fixture: ComponentFixture<MainComponent>;
 
@@ -25,7 +25,7 @@ describe('MainComponent', () => {
         MatIconModule,
         MatListModule,
         MatSidenavModule,
-        MatToolbarModule,
+        MatToolbarModule
       ]
     }).compileComponents();
   }));
@@ -36,7 +36,7 @@ describe('MainComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should compile', () => {
+  it("should compile", () => {
     expect(component).toBeTruthy();
   });
 });

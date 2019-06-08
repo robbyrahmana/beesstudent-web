@@ -1,5 +1,11 @@
-import { Pagination } from '../model/pagination';
+import { Observable } from "rxjs";
+import { Pageable } from "../model/Pageable";
 
-export interface CommonTableDataSourceRepository {
-    pageableApi(pagination: Pagination): any;
+export interface CommonPageableDataSourceRepository<T> {
+  pageableApi(
+    sort: string,
+    order: string,
+    page: number,
+    size: number
+  ): Observable<Pageable<T>>;
 }
